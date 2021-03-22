@@ -1,13 +1,15 @@
+# -*- coding: utf-8 -*-
+
 # Define here the models for your scraped items
 #
 # See documentation in:
-# https://docs.scrapy.org/en/latest/topics/items.html
+# http://doc.scrapy.org/en/latest/topics/items.html
 
 import scrapy
 
-#movie_item
+# movie_item
 class DoubanMovieItem(scrapy.Item):
-    # define the field for your item here like:
+    # define the fields for your item here like:
     # name = scrapy.Field()
     movie_id = scrapy.Field()           # 电影的唯一ID
     movie_title = scrapy.Field()        # 电影名字
