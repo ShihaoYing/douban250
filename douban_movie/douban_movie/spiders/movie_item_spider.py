@@ -96,7 +96,7 @@ class DoubanMovieSpider(scrapy.Spider):
         # movie id
         movie_item['movie_id'] = response.xpath('//li/span[@class="rec"]/@id').extract()
         # movie title
-        movie_item['movie_title'] = response.xpath('//h1/span[@property="v:itemreviewed"]/text()').extract()
+        movie_item['movie_title'] = response.xpath('//*[@id="content"]/h1/span[1]').extract()
         # release_date
         movie_item['release_date'] = response.xpath('.//h1/span[@class="year"]/text()').extract()
         # 导演

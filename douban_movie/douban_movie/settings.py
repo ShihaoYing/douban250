@@ -120,6 +120,8 @@ COMMANDS_MODULE = 'douban_movie.commands'
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 CONCURRENT_REQUESTS = 1000
 
+allow_redirects=False
+
 LOG_LEVEL = 'DEBUG'
 # Configure a delay for requests for the same website (default: 0)
 # See http://scrapy.readthedocs.org/en/latest/topics/settings.html#download-delay
@@ -138,13 +140,13 @@ COOKIES_ENABLED = False
 #TELNETCONSOLE_ENABLED = False
 
 # Override the default request headers:
-DEFAULT_REQUEST_HEADERS = {
-    'Host': 'movie.douban.com',
-    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-    'Accept-Language': 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
-    'Accept-Encoding': 'gzip, deflate, br',
-    'Connection': 'keep-alive',
-}
+# DEFAULT_REQUEST_HEADERS = {
+#     'Host': 'movie.douban.com',
+#     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+#     'Accept-Language': 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+#     'Accept-Encoding': 'gzip, deflate, br',
+#     'Connection': 'keep-alive',
+# }
 
 # Enable or disable spider middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
@@ -156,7 +158,7 @@ DEFAULT_REQUEST_HEADERS = {
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
     'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': None,  
-    'douban_movie.useragent.RandomUserAgentMiddleware' :302,
+    'douban_movie.useragent.RandomUserAgentMiddleware' :400,
     'douban_movie.middlewares.SeleniumMiddleware': 543
 }
 
